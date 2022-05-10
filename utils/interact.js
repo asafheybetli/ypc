@@ -4,7 +4,7 @@ const { createAlchemyWeb3 } = require("@alch/alchemy-web3");
 const web3 = createAlchemyWeb3(process.env.NEXT_PUBLIC_API_URL);
 
 const contract = require("../artifacts/contracts/YummyPandasClan.sol/YummyPandasClan.json");
-const contractAddress = "0x3354d9Ee587BDaa91AC7d411C7365D4907d9b115";
+const contractAddress = "0x56bf472BafdC4F8C935D3f7E1AF6116b9e5964B8";
 const nftContract = new web3.eth.Contract(contract.abi, contractAddress);
 
 export const connectWallet = async () => {
@@ -139,7 +139,7 @@ export const mintNFT = async (mintAmount) => {
   const transactionParameters = {
     to: contractAddress, // Required except during contract publications.
     from: window.ethereum.selectedAddress, // must match user's active address.
-    value: parseInt(web3.utils.toWei("0.05", "ether") * mintAmount).toString(
+    value: parseInt(web3.utils.toWei("0.0008", "ether") * mintAmount).toString(
       16
     ), // hex
     gasLimit: "0",
